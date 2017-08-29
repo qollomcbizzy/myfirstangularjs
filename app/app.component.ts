@@ -17,8 +17,8 @@ import { Component } from '@angular/core';
       </div>
     </div>
     <p>{{favoritealbum.title}}</p>
-    <p>{{favoritealbum.artist}}</p>
-    <p>{{favoritealbum.releasedDate}}</p>
+    <p>By :{{favoritealbum.artist}}</p>
+    <p>Released on :{{favoritealbum.releasedDate}}</p>
   </div>
   <div class= "container">
     <div class="row">
@@ -41,10 +41,11 @@ export  class AppComponent{
  favoriteband: string = 'the cure';
  favoritelanguage :string = "Javascript";
  numberofDays :number=34568;
- favoritealbum ={
-   title :'Ongengo',
-   artist :'dennis',
-   releasedDate :1989,
+ favoritealbum:Album=new Album("ongengo studeios","ongengo",2001);
+  
+}
+export class Album{
+  constructor(public title : string,public artist :string,public releasedDate:number ){
 
- }
+  }
 }
