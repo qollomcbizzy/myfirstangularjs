@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
   <div class ="container">
     <h1 class="col-md-6 col-md-offset-2">My First Angular 2 App</h1>
-    <h3>one of my favorite bands is : { {favoriteband}}</h3>
+    <h3 class="col-md-6 col-md-offset-2">one of my favorite bands is : {{favoriteband}}</h3>
     <div class="row">
       <div class="col-md-4 col-md-offset-2">
         <h2><marquee direction="right">Welcome buddy !!</marquee></h2>
@@ -16,10 +16,22 @@ import { Component } from '@angular/core';
       Its cool and nice to use in programming using :{{ favoritelanguage}}</p>
       </div>
     </div>
+    </div>
+    <div class="row">
+    <div class="col-md-4 col-md-offset-2">
     <p>{{favoritealbum.title}}</p>
     <p>By :{{favoritealbum.artist}}</p>
     <p>Released on :{{favoritealbum.releasedDate}}</p>
-  </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-md-6 col-md-offset-2">
+    <h2>Here are the list of my favorite pies</h2>
+    <div class="pie" *ngFor="let currentpie  of favoritePies ">
+    <p>{{currentpie}}</p>
+    </div>
+    </div>
+    </div>
   <div class= "container">
     <div class="row">
       <form id="signup">
@@ -42,7 +54,7 @@ export  class AppComponent{
  favoritelanguage :string = "Javascript";
  numberofDays :number=34568;
  favoritealbum:Album=new Album("ongengo studeios","ongengo",2001);
-  
+favoritePies : string[] = ["appple ","bananas","mangoes"];
 }
 export class Album{
   constructor(public title : string,public artist :string,public releasedDate:number ){
